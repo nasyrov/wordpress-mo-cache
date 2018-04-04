@@ -15,26 +15,28 @@ add_filter('override_load_textdomain', function ($_, $domain, $mofile) {
         return false;
     }
 
-    $data  = get_transient(md5($mofile));
+    $cacheKey = sprintf('mo-cache-%s', md5($mofile));
+    $cache    = get_transient($cacheKey);
+
     $mtime = filemtime($mofile);
 
     $mo = new MO;
 
-    if (!$data || !isset($data['mtime']) || $mtime > $data['mtime']) {
+    if (!$cache || !isset($cache['mtime']) || $mtime > $cache['mtime']) {
         if (!$mo->import_from_file($mofile)) {
             return false;
         }
 
-        $data = [
+        $cache = [
             'mtime'   => $mtime,
             'entries' => $mo->entries,
             'headers' => $mo->headers,
         ];
 
-        set_transient(md5($mofile), $data);
+        set_transient($cacheKey, $cache);
     } else {
-        $mo->entries = $data['entries'];
-        $mo->headers = $data['headers'];
+        $mo->entries = $cache['entries'];
+        $mo->headers = $cache['headers'];
     }
 
     if (isset($l10n[$domain])) {
