@@ -1,6 +1,6 @@
 # WordPress MO Cache
 
-MU-plugin for a faster `load_textdomain`
+WordPress mu-plugin for a faster `load_textdomain`.
 
 ## Requirements
 
@@ -15,4 +15,10 @@ Pull the package via Composer:
 
 ``` bash
 $ composer require nasyrov/wordpress-mo-cache
+```
+
+## Testing
+
+``` bash
+$ composer test
 ```

@@ -1,2 +1,4 @@
-# Composer
+.idea
+build
+composer.lock
 vendor
