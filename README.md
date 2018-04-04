@@ -1,10 +1,10 @@
 # WordPress MO Cache
 
-WordPress mu-plugin for a faster `load_textdomain`.
-
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Total Downloads][ico-downloads]][link-downloads]
+
+WordPress mu-plugin for a faster `load_textdomain`.
 
 ## Requirements
 
