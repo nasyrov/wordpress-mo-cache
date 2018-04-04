@@ -6,6 +6,7 @@
         "wordpress",
         "mu-plugin",
         "cache",
+        "l10n",
         "mo"
     ],
     "homepage": "https://github.com/nasyrov/wordpress-mo-cache",
