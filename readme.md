@@ -20,5 +20,5 @@ $ composer require nasyrov/wordpress-mo-cache
 ## Testing
 
 ``` bash
-$ composer test
+$ composer lint
 ```

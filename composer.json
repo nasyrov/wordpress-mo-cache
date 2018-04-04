@@ -26,9 +26,7 @@
         "squizlabs/php_codesniffer": "~3.2"
     },
     "scripts": {
-        "test": [
-            "phpcs -p --standard=psr2 src"
-        ]
+        "lint": "phpcs -p --standard=psr2 --ignore=vendor ."
     },
     "config": {
         "sort-packages": true
